@@ -1,0 +1,56 @@
+interface Camera{
+	void takePhoto(); // »çÁø Âï±â
+}
+interface MP3{
+	void playMp3(); // À½¾Ç°¨»ó
+}
+interface DMB{
+	void viewTv(); //TV ½ÃÃ»
+}
+class Shape2{
+	private int size;
+	private String color;
+	
+	Shape2(int size, String color){
+		this.size = size;
+		this.color = color;
+	}
+	
+	int getSize() {
+		return size;
+	}
+	
+	String getColor() {
+		return color;
+	}
+}
+
+class Phone extends Shape2 implements Camera,MP3,DMB{
+	
+	public void takePhoto() {
+		System.out.println("»çÁø Âï±â");
+	}
+	public void playMp3() {
+		System.out.println("À½¾Ç°¨»ó");
+	}
+	public void viewTv() {
+		System.out.println("TV ½ÃÃ»");
+	}
+	Phone(int size, String color){
+		super(size,color);
+	}
+	
+	
+}
+public class Ex06_12_±è¿ë½Â {
+	public static void main(String[] args) {
+	Phone p = new Phone(7,"Blue");
+
+	
+	p.viewTv();// TV½ÃÃ»
+	p.playMp3();// À½¾Ç°¨»ó
+	p.takePhoto();// »çÁøÂï±â
+	System.out.println(p.getSize());// 7
+	System.out.println(p.getColor());// blue
+	}
+}
